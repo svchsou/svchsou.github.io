@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strataform — Executive Spatial Reasoning & Mindfulness</title>
+  <meta name="description" content="Strataform is an executive-grade spatial strategy and mindfulness mobile application. A meditative Hamiltonian path ritual designed for cognitive decompression.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: rgba(22, 27, 34, 0.75);
+      --card-border: rgba(212, 175, 55, 0.2);
+      --gold: #d4af37;
+      --gold-light: #f5d77f;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --slate: #1f2937;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 10% 50%, rgba(30, 41, 59, 0.5) 0%, transparent 50%);
+    }
+    header {
+      padding: 2.5rem 1.5rem;
+      max-width: 1040px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #1f293d 0%, #0f1420 100%);
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
+    }
+    .logo-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .brand-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #ffffff;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      margin-left: 1.75rem;
+    }
+    nav a:hover {
+      color: var(--gold);
+    }
+    main {
+      flex: 1;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+      width: 100%;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 0 4.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.15;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    .cta-container {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .btn-play {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: linear-gradient(135deg, #d4af37 0%, #b8972f 100%);
+      color: #0b0f17;
+      text-decoration: none;
+      padding: 0.95rem 1.85rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+      transition: all 0.25s ease;
+    }
+    .btn-play:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(212, 175, 55, 0.45);
+      filter: brightness(1.06);
+    }
+    .btn-play svg {
+      width: 22px;
+      height: 22px;
+    }
+    .grid-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212, 175, 55, 0.45);
+    }
+    .feature-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(13, 17, 23, 0.95);
+      padding: 2.5rem 1.5rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+    .copyright {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="logo-container">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+          <path d="M7 10v4"></path>
+          <path d="M10 7h4"></path>
+          <path d="M14 17H10"></path>
+        </svg>
+      </div>
+      <span class="brand-name">STRATAFORM</span>
+    </a>
+    <nav>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="app-ads.txt">app-ads.txt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge">Mindful Spatial Strategy</div>
+      <h1>Active Cognitive Decompression.</h1>
+      <p>
+        Strataform is an executive-grade spatial reasoning ritual. 
+        Trace a single, continuous, meditative Hamiltonian path on a tactile grid—connecting numbered checkpoints in sequence while harmoniously filling every cell.
+      </p>
+      <div class="cta-container">
+        <a href="https://play.google.com/store/apps/details?id=com.strataform.strataform" class="btn-play" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3.609 1.814L13.793 12 3.61 22.186a2.023 2.023 0 0 1-.61-.926V2.74c.144-.363.36-.688.61-.926zm11.246 11.247l2.428 2.428-11.45 6.46 9.022-8.888zm0-2.122L5.833 2.052l11.45 6.46-2.428 2.427zm1.485 1.06l4.135 2.336a1.18 1.18 0 0 1 0 2.064l-4.135 2.336-2.193-2.193 2.193-2.193z"/>
+          </svg>
+          Get on Google Play
+        </a>
+      </div>
+    </section>
+
+    <section class="grid-features">
+      <div class="feature-card">
+        <div class="feature-num">I // ARCHITECTURE</div>
+        <h3>Hamiltonian Flow</h3>
+        <p>Pure deterministic spatial strategy. Every grid represents a mathematical challenge solvable through calm deduction and visual foresight without guesswork.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-num">II // PRIVACY</div>
+        <h3>100% On-Device</h3>
+        <p>Zero accounts. Zero cloud telemetry. All focus scores, cadence variance, and progress remain strictly local to your secure device sandbox.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-num">III // CLARITY</div>
+        <h3>Tactile Feedback</h3>
+        <p>Calibrated acoustic sonification and precision haptics create a physical, distraction-free environment for uninterrupted spatial problem solving.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://play.google.com/store/apps/details?id=com.strataform.strataform" target="_blank">Google Play Store</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="app-ads.txt">app-ads.txt</a>
+      <a href="mailto:support@strataform.com">Contact Support</a>
+    </div>
+    <p class="copyright">&copy; 2026 Strataform. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
